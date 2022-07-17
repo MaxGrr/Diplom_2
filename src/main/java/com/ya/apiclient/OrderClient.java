@@ -12,7 +12,6 @@ public class OrderClient extends BurgerRestClient{
 
     @Step("Create order without authorization")
     public ValidatableResponse createOrder(Order order) {
-
         return given()
                 .spec(getBaseSpec())
                 .body(order)
@@ -23,7 +22,6 @@ public class OrderClient extends BurgerRestClient{
 
     @Step("Create order with authorization")
     public ValidatableResponse createOrderAuth(Order order, String accessToken) {
-
         return given()
                 .spec(getBaseSpec())
                 .header("authorization", accessToken)
@@ -35,7 +33,6 @@ public class OrderClient extends BurgerRestClient{
 
     @Step("Get order list with authorization")
     public ValidatableResponse getOrderList(String accessToken) {
-
         return given()
                 .spec(getBaseSpec())
                 .header("authorization", accessToken)
@@ -46,7 +43,6 @@ public class OrderClient extends BurgerRestClient{
 
     @Step("Get order list without authorization")
     public ValidatableResponse getOrderListNoAuth() {
-
         return given()
                 .spec(getBaseSpec())
                 .when()

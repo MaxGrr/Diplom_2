@@ -9,10 +9,8 @@ public class IngredientsClient extends BurgerRestClient{
 
     private static final String INGREDIENTS_PATH = "ingredients";
 
-
     @Step("Get ingredients list")
     public ValidatableResponse getIngredients() {
-
         return given()
                 .spec(getBaseSpec())
                 .when()

@@ -13,7 +13,6 @@ public class UserClient extends BurgerRestClient {
 
     @Step("Create user")
     public ValidatableResponse create(User user) {
-
         return given()
                 .spec(getBaseSpec())
                 .body(user)
@@ -24,7 +23,6 @@ public class UserClient extends BurgerRestClient {
 
     @Step("Delete user")
     public ValidatableResponse delete(String accessToken) {
-
         return given()
                 .spec(getBaseSpec())
                 .header("authorization", accessToken)
@@ -35,7 +33,6 @@ public class UserClient extends BurgerRestClient {
 
     @Step("Login with credentials{credentials}")
     public ValidatableResponse login(UserCredentials credentials) {
-
         return given()
                 .spec(getBaseSpec())
                 .body(credentials)
@@ -46,7 +43,6 @@ public class UserClient extends BurgerRestClient {
 
     @Step("Change user data with authorization")
     public ValidatableResponse changeData(User patchedUser, String accessToken) {
-
         return given()
                 .spec(getBaseSpec())
                 .header("authorization", accessToken)
@@ -58,7 +54,6 @@ public class UserClient extends BurgerRestClient {
 
     @Step("Change user data without authorization")
     public ValidatableResponse changeDataNoAuth(User patchedUser) {
-
         return given()
                 .spec(getBaseSpec())
                 .body(patchedUser)
